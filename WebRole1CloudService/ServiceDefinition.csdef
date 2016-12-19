@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDefinition name="WebRole1CloudService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2015-04.2.6">
+  <WebRole name="WebRole1" vmsize="Small">
+    <Sites>
+      <Site name="Web">
+        <Bindings>
+          <Binding name="HttpBinding1" endpointName="HttpEndpoint1" />
+          <Binding name="HttpBinding2" endpointName="HttpEndpoint2" />
+        </Bindings>
+      </Site>
+    </Sites>
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" />
+    </ConfigurationSettings>
+    <Endpoints>
+      <InputEndpoint name="HttpEndpoint1" protocol="http" port="80" />
+      <InputEndpoint name="HttpEndpoint2" protocol="http" port="81" />
+    </Endpoints>
+  </WebRole>
+</ServiceDefinition>
